@@ -1,0 +1,24 @@
+{
+  "name": "group-back-end",
+  "version": "1.0.0",
+  "description": "Project 8 - Back End - (Chackan, Braden, Dennis)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkeithbii/Group-Back-End.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkeithbii/Group-Back-End/issues"
+  },
+  "homepage": "https://github.com/bkeithbii/Group-Back-End#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.3"
+  }
+}
