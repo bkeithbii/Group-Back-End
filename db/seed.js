@@ -3,7 +3,7 @@ const TV = require("../models/TV");
 
 const tvData = dataTV.results.map(item => {
   const tvShow = {
-    name: item.name,
+    title: item.original_name,
     description: item.overview,
     rating: item.vote_average,
     releaseDate: item.first_air_date,
