@@ -1,9 +1,4 @@
-const express = require("express");
-const app = express;
 const Movies = require("../models/Movies");
-const parser = require("body-parser");
-
-// app.use(parser.json());
 
 module.exports = {
   index: (req, res) => {
