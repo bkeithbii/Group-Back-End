@@ -1,22 +1,25 @@
+const dataTV = require("./tvData.json");
 const TV = require("../models/TV");
-const 
 
-const tvData = data.map(item => {
-  const tvShow = {};
-  tvShow.title = item.title;
-  tvShow.description = item.description;
-  tvShow.rating = item.rating;
-  tvShow.releaseDate = item.releaseDate;
-  tvShow.image = item.image;
+const tvData = dataTV.results.map(item => {
+  const tvShow = {
+    name: item.name,
+    description: item.overview,
+    rating: item.vote_average,
+    releaseDate: item.first_air_date,
+    image: item.poster_path
+  };
   return tvShow;
 });
 
-TV.remove({});
-TV.collection
-  .insert(tvData)
-  .then(tvShows => {
-    console.log(tvShows);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+// console.log(tvData);
+
+TV.remove({}).then(() => {
+  TV.create(tvData)
+    .then(tvShows => {
+      console.log(tvShows);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
