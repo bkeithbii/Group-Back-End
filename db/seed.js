@@ -1,14 +1,13 @@
 const Movies = require("../models/Movies");
 const data = require("./data.json");
 
-const moviesData = data.map(params => {
+const moviesData = data.results.map(params => {
   const trendingMovies = {
-    id: params.id
-    // vote_average: params.vote_average,
-    // title: params.title,
-    // release_Date: params.release_Date,
-    // overview: params.overview,
-    // poster_path: params.poster_path
+    vote_average: params.vote_average,
+    title: params.title,
+    release_Date: params.release_Date,
+    overview: params.overview,
+    image: params.poster_path
   };
 
   return trendingMovies;
