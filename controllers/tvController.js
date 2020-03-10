@@ -27,12 +27,12 @@ module.exports = {
     });
   },
   updateList: (req, res) => {
-    TV.findOne({ name: req.params.name }, req.body).then(tvShow => {
+    TV.findOneAndUpdate({ title: req.params.name }, req.body).then(tvShow => {
       res.json(tvShow);
     });
   },
   deleteItem: (req, res) => {
-    TV.findOneAndDelete({ name: req.params.name }).then(tvShow => {
+    TV.findOneAndDelete({ title: req.params.name }).then(tvShow => {
       res.json(tvShow);
     });
   }
