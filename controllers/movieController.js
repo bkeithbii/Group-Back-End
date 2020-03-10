@@ -27,9 +27,11 @@ module.exports = {
     });
   },
   updateList: (req, res) => {
-    Movies.findOne({ name: req.params.name }, req.body).then(movies => {
-      res.json(movies);
-    });
+    Movies.findOneAndUpdate({ name: req.params.name }, req.body).then(
+      movies => {
+        res.json(movies);
+      }
+    );
   },
   deleteItem: (req, res) => {
     Movies.findOneAndDelete({ name: req.params.name }).then(movies => {
