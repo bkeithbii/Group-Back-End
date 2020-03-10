@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express;
 const Movies = require("../models/Movies");
+const parser = require("body-parser");
 
-app.use(parser.json());
+// app.use(parser.json());
 
 module.exports = {
   index: (req, res) => {
@@ -22,6 +23,21 @@ module.exports = {
   },
   showReleaseDate: (req, res) => {
     Movies.find({ releaseDate: req.params.releaseDate }).then(movies => {
+      res.json(movies);
+    });
+  },
+  submit: (req, res) => {
+    Movies.create(req.body).then(movies => {
+      res.json(movies);
+    });
+  },
+  updateList: (req, res) => {
+    Movies.findOne({ name: req.params.name }, req.body).then(movies => {
+      res.json(movies);
+    });
+  },
+  deleteItem: (req, res) => {
+    Movies.findOneAndDelete({ name: req.params.name }).then(movies => {
       res.json(movies);
     });
   }
