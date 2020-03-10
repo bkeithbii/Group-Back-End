@@ -13,3 +13,14 @@ const moviesData = data.results.map(params => {
   return trendingMovies;
 });
 console.log(moviesData);
+
+Movies.remove({}).then(() => {
+  Movies.create(moviesData)
+    .then(showMovies => {
+      console.log(showMovies);
+      process.exit();
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
