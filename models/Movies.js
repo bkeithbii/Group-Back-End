@@ -1,13 +1,12 @@
 const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
-const TV = new Schema({
-  title: String,
+const movieSchema = new Schema({
+  name: String,
   description: String,
   rating: Number,
   releaseDate: String,
   image: String,
   media: String
 });
-
-module.exports = mongoose.model("TV", TV);
+module.exports = mongoose.model("Movies", movieSchema);
