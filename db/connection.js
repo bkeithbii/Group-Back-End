@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/bachelor_nation", {
+mongoose.connect("mongodb://localhost/tvShows", {
   useNewUrlParser: true
 });
 

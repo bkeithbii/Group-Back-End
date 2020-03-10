@@ -1,5 +1,5 @@
-const fetch = require("node-fetch");
 const fs = require("fs");
+const fetch = require("node-fetch");
 
 const tvURL =
   "https://api.themoviedb.org/3/trending/tv/week?api_key=89714d55c10ecf711638286007448c33";
@@ -7,8 +7,9 @@ const tvURL =
 fetch(tvURL)
   .then(res => res.json())
   .then(res => {
-    let countries = JSON.stringify(res);
-    fs.writeFile("./db/tvData.json/", tvShows, err => {
+    console.log(res);
+    let tvShows = JSON.stringify(res);
+    fs.writeFile("./db/tvData.json", tvShows, err => {
       if (err) {
         console.log(err);
       } else {
