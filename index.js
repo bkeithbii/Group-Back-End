@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const parser = require("body-parser");
 const index = require("./routes/index");
-// const cors = require("cors");
-// app.use(cors());
+const cors = require("cors");
+app.use(cors());
 
 app.use(parser.json());
 app.use("/", index);
@@ -16,6 +16,9 @@ app.get("/", function(req, res) {
 
     Movies: "https://group-back-end.herokuapp.com/movie",
     Shows: "https://group-back-end.herokuapp.com/tv"
+
+    // Movies: "https://localhost:9090/movie",
+    // Shows: "https://localhost:9090/tv"
   });
 });
 
