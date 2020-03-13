@@ -35,11 +35,11 @@ Project 8 - Back End - (Chackan, Braden, Dennis)
 - /rating/:rating
 - /name/:name
 - /releaseDate/:releaseDate
-post 
+### post 
 - /
-put
+### put
 - /:name
-delete
+### delete
 - /:name
 
    
